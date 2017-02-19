@@ -1,0 +1,18 @@
+void setHighscore(string player, int points)
+        {
+            int i = 9;
+            // Search for the i
+            while ((i >= 0) && (points > highScore[i]))
+            {
+                highScore[i + 1] = highScore[i];
+              //  highPlayer[i + 1] = highPlayer[i];
+                i--;
+            }
+
+            // Set the Highscore
+            if (i != 9)
+            {
+                highScore[i+1] = points;
+               // highPlayer[i+1] = name;
+            }
+        }
