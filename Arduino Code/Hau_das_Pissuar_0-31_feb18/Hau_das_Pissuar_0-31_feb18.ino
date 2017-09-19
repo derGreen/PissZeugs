@@ -45,14 +45,14 @@ byte icon[8] = {
 };
 */
 byte icon[8] = {
-    B00011,
-    B00011,
-    B00001,
-    B00011,
-    B00101,
-    B11111,
-    B00001,
-    B00011
+  B10001,
+B11001,
+B10001,
+B11101,
+B10001,
+B11001,
+B10001,
+B11111
 };
 // Interrupt is called once a millisecond, looks for any pulses from the sensor!
 SIGNAL(TIMER0_COMPA_vect)
@@ -202,7 +202,7 @@ void PissingBar(int actual, int max)  // Show actual points and name on LCD
 {
   int x = (actual/max)*16;
   //int x = random(16);
-  lcd.setCursor(0,1); 
+  lcd.setCursor(0,1);
   lcd.print(x);
   lcd.write(byte(1));
 };
@@ -214,10 +214,10 @@ void setHighscore(String player, int points)  // compares score with top 10 and 
   {
     int i = 9;
     // Search for the Rank
-  
+
     while ((i >= 0) && (points > highScore[i]))
     {
-      highScore[i+1]  = highScore[i]; 
+      highScore[i+1]  = highScore[i];
       highPlayer[i+1] = highPlayer[i];
       i--;
     };
